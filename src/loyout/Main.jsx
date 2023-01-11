@@ -14,7 +14,7 @@ export default class Main extends React.Component{
 
     componentDidMount() {
         this.setState({loading: true});
-        fetch('http://www.omdbapi.com/?i=tt3896198&apikey=49ce69&s=panda')
+        fetch('https://www.omdbapi.com/?i=tt3896198&apikey=49ce69&s=panda')
             .then(response => response.json())
             .then(data => {
                 this.setState({movies: data.Search, loading: false});
@@ -23,7 +23,7 @@ export default class Main extends React.Component{
 
     SearchHandler(str, type = 'all') {
         this.setState({loading: true});
-        fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=49ce69&s=${str}${type!== 'all'?`&type=${type}` :''}`)
+        fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=49ce69&s=${str}${type!== 'all'?`&type=${type}` :''}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({movies: data.Search, loading:false});
